@@ -280,7 +280,7 @@
                 {/foreach}
                 <a href="/language" class="link">all languages &raquo;</a>
             </p>
-            <p>OpenVK <a href="/about:openvk">{php echo OPENVK_VERSION}</a> | PHP: {phpversion()} | DB: {$dbVersion}</p>
+            <p>Powered by <a href="/about:openvk">OpenVK AP ({php echo OPENVK_COMMIT})</a> | <a href="https://tinelix.ru">tinelix.ru</a></p>
             <p n:ifcontent>
                 {php echo OPENVK_ROOT_CONF["openvk"]["appearance"]["motd"]}
             </p>
