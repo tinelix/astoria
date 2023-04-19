@@ -2,7 +2,7 @@ OpenVK-KB-Heading: Rules
 
 ##### Last modified April 19, 2023
 
-The instance administration allows you to use the [your_instance_here](/) site on the terms specified in these rules. By clicking the "Register" button, нou must agree to the [Privacy Policy](/privacy) and Rules of Instance.
+The instance administration allows you to use the [ovk.tinelix.ru](/) site on the terms specified in these rules. By clicking the "Register" button, нou must agree to the [Privacy Policy](/privacy) and Rules of Instance.
 ****
 
 **You can do everything that does not apply to prohibited actions, but they include:**
