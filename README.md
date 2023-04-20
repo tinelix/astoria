@@ -1,6 +1,8 @@
-# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">OpenVK
+# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Tinelix OVK
 
 _[Русский](README_RU.md)_
+
+_**Tinelix OVK** - fork based on [OpenVK OSS project](https://github.com/openvk/openvk) and designed for your needs and requirements._
 
 **OpenVK** is an attempt to create a simple CMS that ~~cosplays~~ imitates old VKontakte. Code provided here is not stable yet.
 
@@ -16,16 +18,24 @@ We will release OpenVK as soon as it's ready. As for now, you can:
 
 ## Instances
 
-* **[openvk.su](https://openvk.su/)**
-  * **[openvk.uk](https://openvk.uk)** ([mirror](https://t.me/openvk/1609))
-  * **[openvk.co](http://openvk.co)** (mirror [without TLS](https://t.me/openvk/1654))
-* [social.fetbuk.ru](http://social.fetbuk.ru/)
-* [vepurovk.xyz](http://vepurovk.xyz/)
-  * [vepurovk.fun](http://vepurovk.fun/) (mirror without TLS)
-* [ovk.tinelix.ru](https://ovk.tinelix.ru)
-  * [mirror without TLS](http://ovk.tinelix.ru)
+1. Based on [original OpenVK](https://github.com/openvk/openvk):
 
-## Can I create my own OpenVK instance?
+   * **[openvk.su](https://openvk.su/)**
+     * **[openvk.uk](https://openvk.uk)** ([mirror](https://t.me/openvk/1609))
+     * **[openvk.co](http://openvk.co)** (mirror [without TLS](https://t.me/openvk/1654))
+   * [social.fetbuk.ru](http://social.fetbuk.ru/)
+
+2. Based on [VepurOVK](https://github.com/saursvepur/vepurovk) (OpenVK fork):
+
+   * **[vepurovk.xyz](http://vepurovk.xyz/)**
+     * **[vepurovk.fun](http://vepurovk.fun/)** (mirror without TLS)
+
+3. Based on Tinelix OVK (OpenVK fork):
+  
+   * **[ovk.tinelix.ru](https://ovk.tinelix.ru)**
+     * **[mirror without TLS](http://ovk.tinelix.ru)**
+
+## Can I create my own Tinelix OVK / OpenVK instance?
 
 Yes! And you are very welcome to.
 
@@ -35,7 +45,7 @@ If you want, you can add your instance to the list above so that people can regi
 
 ### Installation procedure
 
-1. Install PHP 7.4, web-server, Composer, Node.js, Yarn and [Chandler](https://github.com/openvk/chandler)
+1. Install PHP 7.4, web-server, Composer, Node.js 10+, Yarn and [Chandler](https://github.com/openvk/chandler)
 
 * PHP 8.1 is supported too, however it was not tested carefully, so be aware.
 
@@ -64,8 +74,9 @@ ln -s /path/to/chandler/extensions/available/openvk /path/to/chandler/extensions
 7. Copy `openvk-example.yml` to `openvk.yml` and change options to your liking
 8. Run `composer install` in OpenVK directory
 9. Run `composer install` in commitcaptcha directory
-10. Move to `Web/static/js` and execute `yarn install`
+10. Move to `Web/static/js` and execute `yarn install` or `yarnpkg install`
 11. Set `openvk` as your root app in `chandler.yml`
+12. Set permissions for all `сhandler` directories to 0777 (all read, write and execute permissions) if different
 
 Once you are done, you can login as a system administrator on the network itself (no registration required):
 
@@ -78,7 +89,7 @@ Once you are done, you can login as a system administrator on the network itself
 ### Looking for Docker or Kubernetes deployment?
 See `install/automated/docker/README.md` and `install/automated/kubernetes/README.md` for Docker and Kubernetes deployment instructions.
 
-### If my website uses OpenVK, should I release it's sources?
+### If my website uses Tinelix OVK / OpenVK, should I release it's sources?
 
 It depends. You can keep the sources to yourself if you do not plan to distribute your website binaries. If your website software must be distributed, it can stay non-OSS provided the OpenVK is not used as a primary application and is not modified. If you modified OpenVK for your needs or your work is based on it and you are planning to redistribute this, then you should license it under terms of any LGPL-compatible license (like OSL, GPL, LGPL etc).
 
@@ -93,8 +104,5 @@ You may reach out to us via:
 * [GitHub Discussions](https://github.com/openvk/openvk/discussions)
 * Matrix Chat: #openvk:matrix.org
 
-**Attention**: bug tracker, board, Telegram and Matrix chat are public places, ticketing system is being served by volunteers. If you need to report something that should not be immediately disclosed to general public (for instance, a vulnerability), please contact us directly via this email: **openvk [at] tutanota [dot] com**
-
-<a href="https://codeberg.org/OpenVK/openvk">
-    <img alt="Get it on Codeberg" src="https://codeberg.org/Codeberg/GetItOnCodeberg/media/branch/main/get-it-on-blue-on-white.png" height="60">
-</a>
+## DISCLAIMER
+OpenVK is not affiliated with or endorsed by VK PLC.
