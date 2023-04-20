@@ -1,6 +1,8 @@
-# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">OpenVK
+# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Tinelix OVK
 
 _[English](README.md)_
+
+_**Tinelix OVK** - форк, основанный на OSS-проекте OpenVK и разработан для своих нужд и потребностей._
 
 **OpenVK** — это попытка создать простую CMS, которая ~~косплеит~~ имитирует старый ВКонтакте. На данный момент, представленный здесь исходный код проекта пока не является стабильным.
 
@@ -16,14 +18,22 @@ _[English](README.md)_
 
 ## Инстанции
 
-* **[openvk.su](https://openvk.su/)**
-  * **[openvk.uk](https://openvk.uk)** ([зеркало](<https://t.me/openvk/1609>))
-  * **[openvk.co](http://openvk.co)** (зеркало [без TLS](<https://t.me/openvk/1654>))
-* [social.fetbuk.ru](http://social.fetbuk.ru/)
-* [vepurovk.xyz](http://vepurovk.xyz/)
-  * **[vepurovk.fun](http://vepurovk.fun)** (зеркало без TLS)
-* [ovk.tinelix.ru](https://ovk.tinelix.ru)
-  * [зеркало без TLS](http://ovk.tinelix.ru)
+1. На базе [оригинального OpenVK](https://github.com/openvk/openvk):
+
+   * **[openvk.su](https://openvk.su/)**
+     * **[openvk.uk](https://openvk.uk)** ([зеркало](https://t.me/openvk/1609))
+     * **[openvk.co](http://openvk.co)** (зеркало [без TLS](https://t.me/openvk/1654))
+   * [social.fetbuk.ru](http://social.fetbuk.ru/)
+
+2. На базе [VepurOVK](https://github.com/saursvepur/vepurovk) (форк OpenVK):
+
+   * **[vepurovk.xyz](http://vepurovk.xyz/)**
+     * **[vepurovk.fun](http://vepurovk.fun)** (зеркало без TLS)
+
+3. На базе Tinelix OVK (форк OpenVK):
+
+   * **[ovk.tinelix.ru](https://ovk.tinelix.ru)**
+     * **[зеркало без TLS](http://ovk.tinelix.ru)**
 
 ## Могу ли я создать свою собственную инстанцию OpenVK?
 
@@ -35,7 +45,7 @@ _[English](README.md)_
 
 ### Процедура установки
 
-1. Установите PHP 7.4, веб-сервер, Composer, Node.js, Yarn и [Chandler](https://github.com/openvk/chandler)
+1. Установите PHP 7.4, веб-сервер, Composer, Node.js 10+, Yarn и [Chandler](https://github.com/openvk/chandler)
 
 * PHP 8 еще **не** тестировался, поэтому не стоит ожидать, что он будет работать (UPD: он не работает).
 
@@ -66,6 +76,7 @@ ln -s /path/to/chandler/extensions/available/openvk /path/to/chandler/extensions
 9. Запустите `composer install` в директории commitcaptcha
 10. Перейдите в `Web/static/js` и выполните `yarn install`
 11. Установите `openvk` в качестве корневого приложения в файле `chandler.yml`
+12. Выставите права во всех директориях `chandler` на 0777 (все права на чтение, запись и выполнение), если отличается
 
 После этого вы можете войти как системный администратор в саму сеть (регистрация не требуется):
 
@@ -95,6 +106,5 @@ ln -s /path/to/chandler/extensions/available/openvk /path/to/chandler/extensions
 
 **Внимание**: баг-трекер, форум, Telegram- и Matrix-чат являются публичными местами, и жалобы в OVK обслуживается волонтерами. Если вам нужно сообщить о чем-то, что не должно быть раскрыто широкой публике (например, сообщение об уязвимости), пожалуйста, свяжитесь с нами напрямую по этому адресу: **openvk [собачка] tutanota [точка] com**.
 
-<a href="https://codeberg.org/OpenVK/openvk">
-    <img alt="Get it on Codeberg" src="https://codeberg.org/Codeberg/GetItOnCodeberg/media/branch/main/get-it-on-blue-on-white.png" height="60">
-</a>
+## ДИСКЛЕЙМЕР
+OpenVK никак не связан с компанией ООО "ВК" и не одобрен ею. 
