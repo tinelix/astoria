@@ -104,5 +104,7 @@ You may reach out to us via:
 * [GitHub Discussions](https://github.com/openvk/openvk/discussions)
 * Matrix Chat: #openvk:matrix.org
 
+**Attention**: bug tracker, board, Telegram and Matrix chat are public places, ticketing system is being served by volunteers. If you need to report something that should not be immediately disclosed to general public (for instance, a vulnerability), please contact us directly via this email: **openvk [at] tutanota [dot] com**
+
 ## DISCLAIMER
 OpenVK is not affiliated with or endorsed by VK PLC.
