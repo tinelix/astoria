@@ -82,7 +82,7 @@ Once you are done, you can login as a system administrator on the network itself
 
 * **Login**: `admin@localhost.localdomain6`
 * **Password**: `admin`
-  * It is recommended to change the password of the built-in account or disable it.
+  * It is highly recommended to change the password of the built-in account or disable it.
 
 💡Confused? Full installation walkthrough is available [here](https://docs.openvk.su/openvk_engine/centos8_installation/) (CentOS 8 [and](https://almalinux.org/) [family](https://yum.oracle.com/oracle-linux-isos.html)).
 
