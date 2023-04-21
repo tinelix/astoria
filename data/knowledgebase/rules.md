@@ -1,6 +1,6 @@
 OpenVK-KB-Heading: Rules
 
-##### Last modified April 19, 2023
+##### Last modified April 21, 2023
 
 The instance administration allows you to use the [ovk.tinelix.ru](/) site on the terms specified in these rules. By clicking the "Register" button, нou must agree to the [Privacy Policy](/privacy) and Rules of Instance.
 ****
@@ -18,13 +18,15 @@ The instance administration allows you to use the [ovk.tinelix.ru](/) site on th
 7. The publication and storage on the resource of any content that:
     1. Is illegal in Russian Federation,
     2. Contains pornographic scenes involving persons under the age of 18,
-    3. Contains advertisements for drugs banned in Russian Federation instructions for their preparation,
-    4. Contains information prohibited in Russian Federation,
-    5. Used for political purposes, provoking other users of the instance,
-    6. Contains scenes of inhuman treatment of people or animals,
-    7. Violates copyright and related rights,
-    8. Violates human rights,
-    9. Prevents users from following the rules or from properly using the services provided by the OpenVK project.
+    3. Contains pornographic scenes without "Contains NSFW content" flag,
+    4. Contains advertisements for drugs banned in Russian Federation instructions for their preparation,
+    5. Contains information prohibited in Russian Federation,
+    6. Used for political purposes, provoking other users of the instance,
+    7. Contains scenes of inhuman treatment of people or animals,
+    8. Violates copyright and related rights,
+    9. Violates human rights,
+    10. Contains home addresses, phone numbers, email addresses, passport details and other personal information of other users or any third parties without their personal consent to be placed,
+    11. Prevents users from following the rules or from properly using the services provided by the OpenVK project.
 
 The administration is the highest authority that has the full right to make decisions about disputes that are not described in the rules.
 
