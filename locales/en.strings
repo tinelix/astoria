@@ -1064,6 +1064,7 @@
 /* Admin panel */
 
 "admin" = "Admin panel";
+"db" = "Database";
 
 "admin_ownerid" = "Owner ID";
 "admin_author" = "Author";

@@ -1046,6 +1046,7 @@
 /* Admin panel */
 
 "admin" = "Ադմին-վահանակ";
+"db" = "տվյալների բազա"
 
 "admin_ownerid" = "Օգտատիրոջ ID";
 "admin_author" = "Հեղինակ";

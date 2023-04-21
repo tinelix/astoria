@@ -963,6 +963,7 @@
 /* Admin panel */
 
 "admin" = "Адмін панель";
+"db" = "База даних"
 "admin_ownerid" = "ID власника";
 "admin_author" = "Автор";
 "admin_name" = "Ім'я";

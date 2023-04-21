@@ -960,6 +960,7 @@
 /* Admin panel */
 
 "admin" = "Админ-панель";
+"db" = "База данных";
 "admin_ownerid" = "ID владельца";
 "admin_author" = "Автор";
 "admin_name" = "Имя";
