@@ -1,0 +1,10 @@
+id: retro_ovk
+version: "0.0.1.0"
+openvk_version: 0
+enabled: 0
+metadata:
+    name:
+        _: "RetroOVK"
+        en: "RetroOVK"
+    author: "Tinelix"
+    description: "OpenVK theme for 2000s browsers"
