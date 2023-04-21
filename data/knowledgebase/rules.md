@@ -5,7 +5,7 @@ OpenVK-KB-Heading: Rules
 The instance administration allows you to use the [ovk.tinelix.ru](/) site on the terms specified in these rules. By clicking the "Register" button, нou must agree to the [Privacy Policy](/privacy) and Rules of Instance.
 ****
 
-**You can do everything that does not apply to prohibited actions, but they include:**
+**You can do everything that does not apply to prohibited actions**, but they include:
 
 1. Refusing to obey the rules or ignoring them,
 2. Waiver of the mandatory presence of representatives of tech support agents or administration,
@@ -30,6 +30,8 @@ The instance administration allows you to use the [ovk.tinelix.ru](/) site on th
 
 The administration is the highest authority that has the full right to make decisions about disputes that are not described in the rules.
 
+****
+
 The administration may issue a punishment if users:
 
 1. Post prohibited content on the pages of other users,
@@ -38,6 +40,9 @@ The administration may issue a punishment if users:
 4. Publicly criticize OpenVK or the administration in order to humiliate or insult project participants or its leaders
 5. Banned from official OpenVK or Tinelixhouse chats,
 6. They do not respect the Instance, Project administration or tech support agents.
+
+
+****
 
 In case of violation of the rules, the administration can:
 
@@ -48,5 +53,7 @@ In case of violation of the rules, the administration can:
 5. Remove account or prohibited content.
 
 The administration can issue punishments without giving a reason (even if there is one).
+
+****
 
 Email: [tinelix(at)mail.ru](mailto:tinelix@mail.ru) / [tinelix(at)downmail.ru](mailto:tinelix@downmail.ru)
