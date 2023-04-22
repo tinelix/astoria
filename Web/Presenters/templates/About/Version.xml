@@ -103,7 +103,7 @@
                         <h1 class="p">Astorium {=OPENVK_VERSION}</h1>
                         Powered by OpenVK
                     </td>
-                    <td>
+                    <td style="border: none;">
                         <img id="ovkLogo" src="/assets/packages/static/openvk/img/logo_full.svg" alt="OpenVK Logo" />
                     </td>
                 </tr>
