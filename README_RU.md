@@ -1,8 +1,8 @@
-# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Tinelix OVK
+# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Astorium
 
 _[English](README.md)_
 
-_**Tinelix OVK** - форк, основанный на [OSS-проекте OpenVK](https://github.com/openvk/openvk) и разработан для своих нужд и потребностей._
+_**Astorium** - форк, основанный на [OSS-проекте OpenVK](https://github.com/openvk/openvk) и разработан для своих нужд и потребностей._
 
 **OpenVK** — это попытка создать простую CMS, которая ~~косплеит~~ имитирует старый ВКонтакте. На данный момент, представленный здесь исходный код проекта пока не является стабильным.
 
@@ -30,7 +30,7 @@ _**Tinelix OVK** - форк, основанный на [OSS-проекте OpenV
    * **[vepurovk.xyz](http://vepurovk.xyz/)**
      * **[vepurovk.fun](http://vepurovk.fun)** (зеркало без TLS)
 
-3. На базе Tinelix OVK (форк OpenVK):
+3. На базе Astorium (форк OpenVK):
 
    * **[ovk.tinelix.ru](https://ovk.tinelix.ru)**
      * **[зеркало без TLS](http://ovk.tinelix.ru)**
@@ -89,7 +89,7 @@ ln -s /path/to/chandler/extensions/available/openvk /path/to/chandler/extensions
 # Установка в Docker/Kubernetes
 Подробные иструкции можно найти в `install/automated/docker/README.md` и `install/automated/kubernetes/README.md` соответственно.
 
-### Если мой сайт использует Tinelix OVK / OpenVK, должен ли я публиковать его исходные тексты?
+### Если мой сайт использует Astorium / OpenVK, должен ли я публиковать его исходные тексты?
 
 Это зависит от обстоятельств. Вы можете оставить исходные тексты при себе, если не планируете распространять бинарники вашего сайта. Если программное обеспечение вашего сайта должно распространяться, оно может оставаться не-OSS при условии, что OpenVK не используется в качестве основного приложения и не модифицируется. Если вы модифицировали OpenVK для своих нужд или ваша работа основана на нем и вы планируете ее распространять, то вы должны лицензировать ее на условиях любой совместимой с LGPL лицензии (например, OSL, GPL, LGPL и т.д.).
 
