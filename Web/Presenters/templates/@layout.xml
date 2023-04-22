@@ -281,7 +281,7 @@
                 {/foreach}
                 <a href="/language" class="link">all languages &raquo;</a>
             </p>
-            <p>Powered by <a href="/about:openvk">OpenVK AP ({php echo OPENVK_COMMIT})</a> | <a href="https://tinelix.ru">tinelix.ru</a> | <a href="https://github.com/tinelix/openvk">GitHub</a></p>
+            <p> <a href="/about:openvk">Astorium {php echo OPENVK_COMMIT}</a> | Powered by <a href="https://github.com/openvk/openvk">OpenVK</a> | <a href="https://tinelix.ru">tinelix.ru</a> | <a href="https://github.com/tinelix/openvk">GitHub</a></p>
             <p n:ifcontent>
                 {php echo OPENVK_ROOT_CONF["openvk"]["appearance"]["motd"]}
             </p>
