@@ -50,6 +50,7 @@
 
         .p {
             text-align: left;
+            margin-bottom: 4px;
         }
 
         .e {
@@ -99,7 +100,7 @@
             <tbody>
                 <tr class="h">
                     <td class="hc_top">
-                        <h1 class="p" style="float: left;">Astorium {=OPENVK_VERSION}</h1>
+                        <h1 class="p">Astorium {=OPENVK_VERSION}</h1>
                         Powered by OpenVK
                     </td>
                     <td>
