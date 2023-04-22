@@ -1,8 +1,8 @@
-# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Tinelix OVK
+# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Astorium
 
 _[Русский](README_RU.md)_
 
-_**Tinelix Astoria** - fork based on [OpenVK OSS project](https://github.com/openvk/openvk) and designed for your needs and requirements._
+_**Astorium** - fork based on [OpenVK OSS project](https://github.com/openvk/openvk) and designed for your needs and requirements._
 
 **OpenVK** is an attempt to create a simple CMS that ~~cosplays~~ imitates old VKontakte. Code provided here is not stable yet.
 
@@ -30,7 +30,7 @@ We will release OpenVK as soon as it's ready. As for now, you can:
    * **[vepurovk.xyz](http://vepurovk.xyz/)**
      * **[vepurovk.fun](http://vepurovk.fun/)** (mirror without TLS)
 
-3. Based on Tinelix Astoria (OpenVK fork):
+3. Based on Astorium (OpenVK fork):
   
    * **[ovk.tinelix.ru](https://ovk.tinelix.ru)**
      * **[mirror without TLS](http://ovk.tinelix.ru)**
@@ -89,7 +89,7 @@ Once you are done, you can login as a system administrator on the network itself
 ### Looking for Docker or Kubernetes deployment?
 See `install/automated/docker/README.md` and `install/automated/kubernetes/README.md` for Docker and Kubernetes deployment instructions.
 
-### If my website uses Tinelix Astoria / OpenVK, should I release it's sources?
+### If my website uses Astorium / OpenVK, should I release it's sources?
 
 It depends. You can keep the sources to yourself if you do not plan to distribute your website binaries. If your website software must be distributed, it can stay non-OSS provided the OpenVK is not used as a primary application and is not modified. If you modified OpenVK for your needs or your work is based on it and you are planning to redistribute this, then you should license it under terms of any LGPL-compatible license (like OSL, GPL, LGPL etc).
 
