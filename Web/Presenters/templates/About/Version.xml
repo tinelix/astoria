@@ -99,7 +99,7 @@
         <table>
             <tbody>
                 <tr class="h">
-                    <td class="hc_top">
+                    <td class="hc_top" style="border: none;">
                         <h1 class="p">Astorium {=OPENVK_VERSION}</h1>
                         Powered by OpenVK
                     </td>
