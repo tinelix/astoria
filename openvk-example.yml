@@ -1,7 +1,7 @@
 openvk:
     debug: true
     appearance:
-        name: "Tinelix OVK Instance"
+        name: "Astorium"
         motd: "<a href=\"http://tinelix.ru\">Tinelix</a> - это больше, чем OpenVK!"
 
     preferences:

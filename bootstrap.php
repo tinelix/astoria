@@ -244,7 +244,7 @@ return (function() {
     define('YEAR', 365 * DAY);
 
     define("nullptr", NULL);
-    define("OPENVK_DEFAULT_INSTANCE_NAME", "OpenVK", false);
+    define("OPENVK_DEFAULT_INSTANCE_NAME", "Astorium", false);
     define("OPENVK_VERSION", "Altair Preview ($ver)", false);
     define("OPENVK_DEFAULT_PER_PAGE", 10, false);
     define("__OPENVK_ERROR_CLOCK_IN_FUTURE", "Server clock error: FK1200-DTF", false);

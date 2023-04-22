@@ -64,6 +64,10 @@
             color: #fff;
         }
 
+        .hc_top {
+            vertical-align: top;
+        }
+
         .v {
             background-color: #f1f5f9;
             max-width: 300px;
@@ -94,8 +98,11 @@
         <table>
             <tbody>
                 <tr class="h">
+                    <td class="hc_top">
+                        <h1 class="p" style="float: left;">Astorium {=OPENVK_VERSION}</h1>
+                        Powered by OpenVK
+                    </td>
                     <td>
-                        <h1 class="p" style="float: left;">OpenVK {=OPENVK_VERSION}</h1>
                         <img id="ovkLogo" src="/assets/packages/static/openvk/img/logo_full.svg" alt="OpenVK Logo" />
                     </td>
                 </tr>
@@ -105,7 +112,7 @@
         <table>
             <tbody>
                 <tr>
-                    <td class="e">OpenVK</td>
+                    <td class="e">Astorium</td>
                     <td class="v">{=OPENVK_VERSION}</td>
                 </tr>
                 <tr>
@@ -349,7 +356,7 @@
                 </tr>
                 <tr>
                     <td class="e">
-                        Fore
+                        Fore Orange
                     </td>
                     <td class="v">
                         Default
@@ -358,10 +365,10 @@
                         {=OPENVK_VERSION}
                     </td>
                     <td class="v">
-                        Default OpenVK look and feel.
+                        Default Astorium look and feel.
                     </td>
                     <td class="v">
-                        Vladimir Barinov, Konstantin Kichulkin and Daniel Myslivets
+                        Vladimir Barinov, Konstantin Kichulkin, Daniel Myslivets, Dmitry Tretyakov
                     </td>
                 </tr>
                 <tr n:foreach="$themes as $theme">
@@ -501,7 +508,7 @@
 
         <hr/>
 
-        <h1>OpenVK License</h1>
+        <h1>Astorium License</h1>
 
         <table>
             <tbody>
