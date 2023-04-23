@@ -349,11 +349,11 @@
         <table>
             <tbody>
                 <tr class="h">
-                    <th>Name</th>
+                    <th style="width: 80px;">Name</th>
                     <th style="width: 50px;">Status</th>
-                    <th>Version</th>
+                    <th style="width: 80px;">Version</th>
                     <th>Description</th>
-                    <th>Author</th>
+                    <th style="width: 1100px;">Author</th>
                 </tr>
                 <tr>
                     <td class="e">
