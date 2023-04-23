@@ -394,7 +394,20 @@
 
         <hr/>
 
-        <h1>OpenVK Credits</h1>
+        <h1>Astorium Credits</h1>
+
+        <table>
+            <tbody>
+                <tr class="h">
+                    <th>Astorium Development Force</th>
+                </tr>
+                <tr>
+                    <td class="e">
+                        Dmitry Tretyakov (Tinelix)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <table>
             <tbody>
@@ -465,7 +478,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="e">Initial hosting</td>
+                    <td class="e">Astorium initial hosting</td>
+                    <td class="v">Dmitry Tretyakov</td>
+                </tr>
+                <tr>
+                    <td class="e">OpenVK initial hosting</td>
                     <td class="v">Ilya Prokopenko (dsrev) and Celestora</td>
                 </tr>
                 <tr>
@@ -474,7 +491,7 @@
                 </tr>
                 <tr>
                     <td class="e">Images</td>
-                    <td class="v">Vladimir Barinov (veselcraft), Konstantin Kichulkin (kosfurler) and Daniel Myslivets</td>
+                    <td class="v">Dmitry Tretyakov (Tinelix), Vladimir Barinov (veselcraft), Konstantin Kichulkin (kosfurler) and Daniel Myslivets</td>
                 </tr>
                 <tr>
                     <td class="e">Illustrations</td>
@@ -487,6 +504,19 @@
                 <tr>
                     <td class="e">Initial Helpdesk implementation</td>
                     <td class="v">Nikita Volkov (sup_ban)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <tbody>
+                <tr class="h">
+                    <th>Astorium QA Team</th>
+                </tr>
+                <tr class="e">
+                    <td>
+                        Dmitry Tretyakov (Tinelix) and unknown tester, who disappeared shortly after trying to upload post with cat.
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -524,6 +554,19 @@
                         You should have received a copy of the GNU Lesser General Public
                         License along with this program (COPYING file in extension root); if not, write to the Free Software
                         Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <tbody>
+                <tr class="h">
+                    <th>Source code</th>
+                </tr>
+                <tr class="e">
+                    <td>
+                        <a href="https://github.com/tinelix/astorium">Click here</a>
                     </td>
                 </tr>
             </tbody>
