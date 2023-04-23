@@ -431,13 +431,13 @@
                     <th colspan="3">Languagepacks</th>
                 </tr>
                 <tr class="h">
-                    <td style="width: 120px">
+                    <td>
                         Language
                     </td>
-                    <td>
+                    <td  style="width: 240px">
                         Native name
                     </td>
-                    <td>
+                    <td style="width: 260px">
                         Author(s)
                     </td>
                 </tr>
