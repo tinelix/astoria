@@ -351,9 +351,9 @@
                 <tr class="h">
                     <th>Name</th>
                     <th style="width: 120px;">Status</th>
-                    <th style="width: 180px;">Version</th>
+                    <th style="width: 200px;">Version</th>
                     <th style="width: 340px;">Description</th>
-                    <th style="width: 220px;">Author</th>
+                    <th style="width: 240px;">Author</th>
                 </tr>
                 <tr>
                     <td class="e">
