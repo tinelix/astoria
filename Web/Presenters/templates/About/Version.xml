@@ -559,17 +559,6 @@
             </tbody>
         </table>
 
-        <table>
-            <tbody>
-                <tr class="h">
-                    <th>Source code</th>
-                </tr>
-                <tr class="e">
-                    <td>
-                        <a href="https://github.com/tinelix/astorium">Click here</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <a href="https://github.com/tinelix/astorium">Source code</a>
     </div>
 {/block}
