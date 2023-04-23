@@ -350,10 +350,10 @@
             <tbody>
                 <tr class="h">
                     <th>Name</th>
-                    <th style="width: 50px;">Status</th>
+                    <th>Status</th>
                     <th style="width: 80px;">Version</th>
-                    <th style="width: 150px;">Description</th>
-                    <th style="width: 100px;">Author</th>
+                    <th style="width: 180px;">Description</th>
+                    <th style="width: 140px;">Author</th>
                 </tr>
                 <tr>
                     <td class="e">
