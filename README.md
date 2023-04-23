@@ -35,11 +35,11 @@ We will release OpenVK as soon as it's ready. As for now, you can:
    * **[ovk.tinelix.ru](https://ovk.tinelix.ru)**
      * **[mirror without TLS](http://ovk.tinelix.ru)**
 
-## Can I create my own Tinelix Astoria / OpenVK instance?
+## Can I create my own Tinelix Astorium / OpenVK instance?
 
 Yes! And you are very welcome to.
 
-However, OVK makes use of Chandler Application Server. This software requires extensions, that may not be provided by your hosting provider (namely, sodium and yaml. these extensions are available on most of ISPManager hostings).
+However, Astorium (like OpenVK) makes use of Chandler Application Server. This software requires extensions, that may not be provided by your hosting provider (namely, sodium and yaml. these extensions are available on most of ISPManager hostings).
 
 If you want, you can add your instance to the list above so that people can register there.
 
@@ -58,7 +58,7 @@ If you want, you can add your instance to the list above so that people can regi
 3. Install [commitcaptcha](https://github.com/openvk/commitcaptcha) and OpenVK as Chandler extensions like this:
 
 ```bash
-git clone https://github.com/openvk/openvk /path/to/chandler/extensions/available/openvk
+git clone https://github.com/tinelix/astorium /path/to/chandler/extensions/available/openvk
 git clone https://github.com/openvk/commitcaptcha /path/to/chandler/extensions/available/commitcaptcha
 ```
 
@@ -107,4 +107,4 @@ You may reach out to us via:
 **Attention**: bug tracker, board, Telegram and Matrix chat are public places, ticketing system is being served by volunteers. If you need to report something that should not be immediately disclosed to general public (for instance, a vulnerability), please contact us directly via this email: **openvk [at] tutanota [dot] com**
 
 ## DISCLAIMER
-OpenVK is not affiliated with or endorsed by VK PLC.
+OpenVK and Astorium is not affiliated with or endorsed by VK PLC.
