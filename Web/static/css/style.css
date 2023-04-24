@@ -1816,7 +1816,7 @@ body.scrolled .toTop:hover {
 }
 
 .paginator a:hover {
-    border-top: 3px solid rgb(170, 170, 170);
+    border-top: 3px solid rgb(192, 75, 15);
     background-color: rgb(230, 230, 230);
 }
 
