@@ -1,0 +1,12 @@
+id: modern
+version: "0.0.1.0-astorium"
+openvk_version: 0
+enabled: 1
+metadata:
+    name:
+        _: "Astorium Modern"
+        en: "Astorium Modern"
+        ru: "Astorium Modern"
+        uk: "Astorium Modern"
+    author: "Mikita Wiśniewski (rudzik8), Dmitry Tretyakov"
+    description: "Astorium theme in modern style"
