@@ -897,7 +897,7 @@ table.User {
 }
 
 .tabs {
-    border-bottom: 1px solid #707070;
+    border-bottom: 1px solid #c04b0f;
     padding: 0 10px;
     margin-left: -10px;
     width: 607px;
@@ -1941,7 +1941,7 @@ body.scrolled .toTop:hover {
 }
 
 .summaryBar {
-    border-bottom: #DEDEDE solid 1px;
+    border-bottom: #c04b0f solid 1px;
     clear: both;
     padding: 11px 10px;
     padding-bottom: 11px;
