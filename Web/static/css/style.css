@@ -516,13 +516,13 @@ table {
     background-position: 0 -16px;
     color: #fff;
     padding: 4px 8px;
-    text-shadow: 0 1px 0 #ba4511;
+    text-shadow: 0 1px 0 #ffffff3f;
     cursor: pointer;
     text-decoration: none;
 }
 
 .button:hover {
-    color: #ffdabf;
+    color: #ffffffaf;
 }
 
 .button[disabled] {
