@@ -511,7 +511,7 @@ table {
     font-size: 11px;
     outline: none;
     white-space: nowrap;
-    background: #595959;
+    background: #dd6700;
     background-position: 0 -16px;
     color: #fff;
     padding: 4px 8px;
@@ -521,7 +521,7 @@ table {
 }
 
 .button:hover {
-    color: #e8e8e8;
+    color: #fec07c;
 }
 
 .button[disabled] {
@@ -851,8 +851,6 @@ span {
 
 .content_list .cl_element {
     width: 33%;
-    display: inline-block;
-    text-align: center;
 }
 
 .content_list.long .cl_element {
@@ -873,7 +871,6 @@ span {
 
 .content_list .cl_element .cl_name .cl_lname {
     font-size: 7pt;
-    display: block;
 }
 
 .ava {
@@ -914,12 +911,12 @@ table.User {
 }
 
 #activetabs {
-    background: #707070;
+    background: #dd6700;
 }
 
 
 #activetabs:hover {
-    color: #e8e8e8;
+    color: #fec07c;
 }
 
 .tab {
