@@ -1,5 +1,5 @@
 <div class="page_wrap">
-    <div n:ifset="tabs" class="tabs">
+    <div n:ifset="tabs" class="tabs tabs_panel">
         {include tabs}
     </div>
     

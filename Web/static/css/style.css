@@ -897,6 +897,15 @@ table.User {
 }
 
 .tabs {
+    border-bottom: 1px solid #707070;
+    padding: 0 10px;
+    margin-left: -10px;
+    width: 607px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.tabs_panel {
     border-bottom: 1px solid #c04b0f;
     padding: 0 10px;
     margin-left: -10px;
