@@ -516,12 +516,13 @@ table {
     background-position: 0 -16px;
     color: #fff;
     padding: 4px 8px;
-    text-shadow: 0 1px 0 #ffffff3f;
+    text-shadow: 0 1px 0 #0000003f;
     cursor: pointer;
     text-decoration: none;
 }
 
 .button:hover {
+    text-shadow: 0 1px 0 #0000003f;
     color: #ffffffaf;
 }
 
