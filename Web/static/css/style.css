@@ -1816,12 +1816,12 @@ body.scrolled .toTop:hover {
 }
 
 .paginator a:hover {
-    border-top: 3px solid rgb(192, 75, 15);
+    border-top: 3px rgb(254, 189, 140);
     background-color: rgb(230, 230, 230);
 }
 
 .paginator a.active {
-    border-top: 3px solid rgb(130, 130, 130);
+    border-top: 3px solid rgb(192, 75, 15);
     font-weight: bold;
 }
 
