@@ -522,7 +522,7 @@ table {
 }
 
 .button:hover {
-    text-shadow: 0 1px 0 #0000003f;
+    text-shadow: 0 1px 0 #0000001f;
     color: #ffffffaf;
 }
 
