@@ -511,7 +511,7 @@ table {
     font-size: 11px;
     outline: none;
     white-space: nowrap;
-    background: #b74312;
+    background: #c04b0f;
     background-position: 0 -16px;
     color: #fff;
     padding: 4px 8px;
@@ -911,7 +911,7 @@ table.User {
 }
 
 #activetabs {
-    background: #b74312;
+    background: #c04b0f;
 }
 
 
