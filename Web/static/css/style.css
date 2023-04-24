@@ -388,7 +388,7 @@ h1 {
     border: none;
     border-bottom: 1px solid #CCC;
     font-size: 11px;
-    color: #2b587a;
+    color: #c04b0f;
     width: 200px;
     text-align: left;
     cursor: pointer;
@@ -673,7 +673,7 @@ select {
 
 .header2 {
     border-bottom: 1px solid #E8EBEE;
-    color: #45688E;
+    color: #c04b0f;
     font-size: 14px;
     font-weight: bold;
     margin: 0;
@@ -682,7 +682,7 @@ select {
 
 h4 {
     border-bottom: 1px solid #E8EBEE;
-    color: #45688E;
+    color: #c04b0f;
     font-size: 12px;
     font-weight: bold;
     margin: 0;
