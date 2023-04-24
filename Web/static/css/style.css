@@ -25,7 +25,7 @@ nobold {
 
 a {
     text-decoration: none;
-    color: #2B587A;
+    color: #dd6700;
     cursor: pointer;
 }
 
@@ -98,7 +98,7 @@ h1 {
 }
 
 .header_navigation .link a {
-    color: #D7D7D7;
+    color: #ffab6c;
     text-decoration: none;
     font-weight: bold;
 }
