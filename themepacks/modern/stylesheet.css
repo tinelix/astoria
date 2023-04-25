@@ -26,6 +26,9 @@ body {
 
 .header_navigation .link {
     background: unset;
+}
+
+.header_navigation .link a {
     color: #E2E2E2;
 }
 
