@@ -26,6 +26,7 @@ body {
 
 .header_navigation .link {
     background: unset;
+    color: #E2E2E2;
 }
 
 .header_navigation .link a:hover {
