@@ -13,14 +13,14 @@ body {
     background: #3C3C3C url("/themepack/modern/0.0.1.0/resource/2.png") no-repeat;
     background-size: 80%;
     background-position-y: 2px;
-    background-position-x: 4px;
+    background-position-x: 8px;
 }
 
 .home_button_custom {
     background: #3C3C3C url("/themepack/modern/0.0.1.0/resource/4.png") no-repeat;
     background-size: 80%;
     background-position-y: 2px;
-    background-position-x: 4px;
+    background-position-x: 8px;
     text-shadow: none;
 }
 
