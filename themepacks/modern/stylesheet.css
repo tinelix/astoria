@@ -51,13 +51,13 @@ body {
 
 .content_title_expanded {
     cursor: pointer;
-    background-image: unset;
+    background-image: none;
     padding: 3px 10px;
     border-top: #e6e6e6 solid 1px;
 }
 
 .content_title_unexpanded {
-    background-image: unset;
+    background-image: none;
     padding: 3px 10px;
     border-top: #eee solid 1px;
 }
