@@ -1047,6 +1047,7 @@
 /* Admin panel */
 
 "admin" = "Ադմին-վահանակ";
+"db" = "տվյալների բազա";
 
 "admin_ownerid" = "Օգտատիրոջ ID";
 "admin_author" = "Հեղինակ";
@@ -1139,7 +1140,7 @@
 
 /* About */
 
-"about_openvk" = "OpenVK-ի մասին";
+"about_astorium" = "Astorium-ի մասին";
 
 "about_this_instance" = "Այս հոսքի մասին";
 "rules" = "Կանոններ";
