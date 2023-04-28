@@ -1427,7 +1427,7 @@
 "tour_section_13_bottom_text_3" = "<b>Attention: </b>Once a promocode is activated on your page, the same promocode cannot be reactivated";
 
 "tour_section_14_title_1" = "Mobile version";
-"tour_section_14_text_1" = "At the moment there is no mobile web version of the site yet, but there is a mobile app for Android";
+"tour_section_14_text_1" = "There is currently a mobile version of the site that uses the OpenVK Mobile theme as well as the OpenVK Legacy Android app.";
 "tour_section_14_text_2" = "OpenVK Legacy is an OpenVK mobile app for retro Android devices with the design of the original VKontakte 3.0 app from 2013";
 "tour_section_14_text_3" = "The minimum supported version is Android 2.1 Eclair, which means devices from the early 2010s will be quite useful";
 
