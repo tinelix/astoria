@@ -65,7 +65,6 @@ function toggleMenu(id) {
         });
     }
 }
-
 document.addEventListener("DOMContentLoaded", function() { //BEGIN
 
     u("#_photoDelete").on("click", function(e) {
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() { //BEGIN
         formHtml    += "<input type='hidden' name='hash' value='" + u("meta[name=csrf]").attr("value") + "' />";
         formHtml    += "</form>";
         u("body").append(formHtml);
-        
+
         MessageBox(tr('warning'), tr('question_confirm'), [
             tr('yes'),
             tr('no')
@@ -85,10 +84,78 @@ document.addEventListener("DOMContentLoaded", function() { //BEGIN
                 u("#tmpPhDelF").remove();
             }),
         ]);
-        
+
         return e.preventDefault();
     });
+    u("#_avatarDelete").on("click", function(e) {
+        var formHtml = "<form id='tmpPhDelF' action='" + u(this).attr("href") + "' >";
+        formHtml    += "<input type='hidden' name='hash' value='" + u("meta[name=csrf]").attr("value") + "' />";
+        formHtml    += "</form>";
+        u("body").append(formHtml);
 
+        MessageBox(tr('prevention'), tr('delete_photo'), [
+            tr('delete'),
+            tr('close')
+        ], [
+            (function() {
+                u("#tmpPhDelF").nodes[0].submit();
+            }),
+            (function() {
+                u("#tmpPhDelF").remove();
+            }),
+        ]);
+
+        return e.preventDefault();
+    });
+    u("#_newPicture").on("click", function(e) {
+        MessageBox(tr('new_photo'),
+        "<form id='tmpPhDelF' action='" + u(this).attr("href") + "' method='POST' enctype='multipart/form-data'>"+
+        "<div id='tmpdd' style='text-align:center'>"+tr('formats')+"<br><br>"+
+        "<label class=\"button\" style=\"\">"+tr('browse')+
+        "<input type=\"file\" id=\"blob\" name=\"blob\" style=\"display: none;\" onchange=\"filename.innerHTML=blob.files[0].name\" /></label>"+
+        "<div id=\"filename\" style=\"margin-top: 10px;\"></div>"+
+        "<br><br>"+tr('upload_problems')+"<br></div>"+
+        //"<p><input type='checkbox' name='makeAvatarPost'>"+tr('leave_photo')+"</p>"+
+        "<input type='hidden' name='hash' value='" + u("meta[name=csrf]").attr("value") + "' />"+
+        "</form>", [
+            tr('upload_button'),
+            tr('close')
+        ], [
+            (function() {
+                u("#tmpPhDelF").nodes[0].submit();
+            }),
+            (function() {
+                u("#tmpPhDelF").remove();
+            }),
+        ]);
+
+        return e.preventDefault();
+    });
+    u("#_newAvatarPicture").on("click", function(e) {
+        MessageBox(tr('new_photo'),
+        "<form id='tmpPhDelF' action='" + u(this).attr("href") + "' method='POST' enctype='multipart/form-data'>"+
+        "<div id='tmpdd' style='text-align:center'>"+tr('good_photo')+
+	"<br><br>"+tr('formats')+"<br><br>"+
+	"<label class=\"button\" style=\"\">"+tr('browse')+
+        "<input type=\"file\" id=\"ava\" name=\"ava\" style=\"display: none;\" onchange=\"filename.innerHTML=ava.files[0].name\" /></label>"+
+        "<div id=\"filename\" style=\"margin-top: 10px;\"></div>"+
+	"<br><br>"+tr('upload_problems')+"<br></div>"+
+        //"<p><input type='checkbox' name='makeAvatarPost' value='1'>"+tr('leave_photo')+"</p>"+
+        "<input type='hidden' name='hash' value='" + u("meta[name=csrf]").attr("value") + "' />"+
+        "</form>", [
+            tr('upload_button'),
+            tr('close')
+        ], [
+            (function() {
+                u("#tmpPhDelF").nodes[0].submit();
+            }),
+            (function() {
+                u("#tmpPhDelF").remove();
+            }),
+        ]);
+
+        return e.preventDefault();
+    });
     /* @rem-pai why this func wasn't named as "#_deleteDialog"? It looks universal IMO */
 
     u("#_noteDelete").on("click", function(e) {
@@ -96,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function() { //BEGIN
         formHtml    += "<input type='hidden' name='hash' value='" + u("meta[name=csrf]").attr("value") + "' />";
         formHtml    += "</form>";
         u("body").append(formHtml);
-        
+
         MessageBox(tr('warning'), tr('question_confirm'), [
             tr('yes'),
             tr('no')
@@ -108,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function() { //BEGIN
                 u("#tmpPhDelF").remove();
             }),
         ]);
-        
+
         return e.preventDefault();
     });
 
@@ -120,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function() { //BEGIN
         let groupName = u(this).attr("data-group-name");
         let groupUrl = u(this).attr("data-group-url");
         let list = u('#_groupListPinnedGroups');
-        
+
         thisButton.nodes[0].classList.add('loading');
         thisButton.nodes[0].classList.add('disable');
 
@@ -161,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function() { //BEGIN
         if(list.nodes[0].children[0].className != "menu_divider" || list.nodes[0].children.length == 1) {
             list.nodes[0].children[0].remove();
         }
-        
+
         thisButton.nodes[0].classList.remove('loading');
         thisButton.nodes[0].classList.remove('disable');
 
@@ -172,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function() { //BEGIN
 
 function repostPost(id, hash) {
 	uRepostMsgTxt  = tr('your_comment') + ": <textarea id='uRepostMsgInput_"+id+"'></textarea><br/><br/>";
-	
+
 	MessageBox(tr('share'), uRepostMsgTxt, [tr('send'), tr('cancel')], [
 		(function() {
 			text = document.querySelector("#uRepostMsgInput_"+id).value;
@@ -436,7 +503,7 @@ function escapeHtml(text) {
       '"': '&quot;',
       "'": '&#039;'
     };
-    
+
     return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }
 

@@ -964,6 +964,7 @@
 /* Admin panel */
 
 "admin" = "Адмін панель";
+"db" = "База даних";
 "admin_ownerid" = "ID власника";
 "admin_author" = "Автор";
 "admin_name" = "Ім'я";
@@ -1047,7 +1048,7 @@
 
 /* About */
 
-"about_openvk" = "Про OpenVK";
+"about_astorium" = "Про Astorium";
 "about_this_instance" = "Про цю інстанцію";
 "rules" = "Правила";
 "most_popular_groups" = "Найпопулярніші групи";
