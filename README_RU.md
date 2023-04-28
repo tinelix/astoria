@@ -18,22 +18,7 @@ _**Astorium** - форк, основанный на [OSS-проекте OpenVK](
 
 ## Инстанции
 
-1. На базе [оригинального OpenVK](https://github.com/openvk/openvk):
-
-   * **[openvk.su](https://openvk.su/)**
-     * **[openvk.uk](https://openvk.uk)** ([зеркало](https://t.me/openvk/1609))
-     * **[openvk.co](http://openvk.co)** (зеркало [без TLS](https://t.me/openvk/1654))
-   * [social.fetbuk.ru](http://social.fetbuk.ru/)
-
-2. На базе [VepurOVK](https://github.com/saursvepur/vepurovk) (форк OpenVK):
-
-   * **[vepurovk.xyz](http://vepurovk.xyz/)**
-     * **[vepurovk.fun](http://vepurovk.fun)** (зеркало без TLS)
-
-3. На базе Astorium (форк OpenVK):
-
-   * **[ovk.tinelix.ru](https://ovk.tinelix.ru)**
-     * **[зеркало без TLS](http://ovk.tinelix.ru)**
+Список инстанций находится в [нашей вики этого репозитория](https://github.com/openvk/openvk/wiki/Instances-(RU)).
 
 ## Могу ли я создать свою собственную инстанцию Astorium / OpenVK?
 
