@@ -142,7 +142,6 @@
                             {var $menuLinksAvaiable   = sizeof(OPENVK_ROOT_CONF['openvk']['preferences']['menu']['links']) > 0 && $thisUser->getLeftMenuItemStatus('links')}
                             <div n:if="$canAccessAdminPanel || $canAccessHelpdesk || $menuLinksAvaiable" class="menu_divider"></div>
                             <a href="/admin" class="link" n:if="$canAccessAdminPanel" title="{_admin} [Alt+Shift+A]" accesskey="a">{_admin}</a>
-                            <a href="/pma" class="link" n:if="$canAccessAdminPanel" title="{_db} [Alt+Shift+D]" accesskey="d">{_db}</a>
                             <a href="/support/tickets" class="link" n:if="$canAccessHelpdesk">{_helpdesk}
                                 {if $helpdeskTicketNotAnsweredCount > 0}
                                     (<b>{$helpdeskTicketNotAnsweredCount}</b>)
@@ -280,7 +279,7 @@
                 {/foreach}
                 <a href="/language" class="link">all languages &raquo;</a>
             </p>
-            <p> <a href="/about:openvk">Astorium {php echo OPENVK_VERSION}</a> | Powered by <a href="https://github.com/openvk/openvk">OpenVK</a> | <a href="https://tinelix.ru">tinelix.ru</a> | <a href="https://github.com/tinelix/openvk">GitHub</a></p>
+            <p>OpenVK <a href="/about:openvk">{php echo OPENVK_VERSION}</a> | PHP: {phpversion()} | DB: {$dbVersion}</p>
             <p n:ifcontent>
                 {php echo OPENVK_ROOT_CONF["openvk"]["appearance"]["motd"]}
             </p>
