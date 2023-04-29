@@ -162,7 +162,8 @@ final class Wall extends VKAPIRequestHandler
                     "screen_name"       => $user->getShortCode(),
                     "photo_50"          => $user->getAvatarUrl(),
                     "photo_100"         => $user->getAvatarUrl(),
-                    "online"            => $user->isOnline()
+                    "online"            => $user->isOnline(),
+                    "verified"          => $user->isVerified()
                 ];
             }
 
@@ -177,6 +178,7 @@ final class Wall extends VKAPIRequestHandler
                     "photo_50"    => $group->getAvatarUrl(),
                     "photo_100"   => $group->getAvatarUrl(),
                     "photo_200"   => $group->getAvatarUrl(),
+                    "verified"    => $group->isVerified()
                 ];
             }
 
