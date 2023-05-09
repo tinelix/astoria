@@ -6,7 +6,7 @@
     {if $theme !== NULL}
         {if $theme->inheritDefault()}
             {css "css/bsdn.css"}
-            {css "css/style.css"}
+            {css "css/main.css"}
             {css "css/dialog.css"}
             {css "css/notifications.css"}
             {css "css/avataredit.css"}
@@ -22,7 +22,7 @@
         {/if}
     {else}
         {css "css/bsdn.css"}
-        {css "css/style.css"}
+        {css "css/main.css"}
         {css "css/dialog.css"}
         {css "css/notifications.css"}
         {css "css/avataredit.css"}
@@ -45,7 +45,7 @@
     {/if}
 {else}
     {css "css/bsdn.css"}
-    {css "css/style.css"}
+    {css "css/main.css"}
     {css "css/dialog.css"}
     {css "css/nsfw-posts.css"}
     {css "css/notifications.css"}
