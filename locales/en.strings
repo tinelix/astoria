@@ -366,6 +366,29 @@
 "change_miniature" = "Change miniature";
 "good_photo" = "A good photo will make your community more recognizable.";
 "leave_photo" = "Leave post on the wall";
+"add_image" = "Add image";
+"add_image_group" = "Upload image";
+"upload_new_picture" = "Upload new photo";
+"uploading_new_image" = "Uploading new photo";
+"friends_avatar" = "It will be easier for friends to recognize you if you upload your real picture.";
+"groups_avatar" = "Good photo can make your group more recognizable.";
+"formats_avatar" = "You can upload an image in JPG, GIF or PNG format.";
+"troubles_avatar" = "If you're having trouble uploading, try selecting a smaller photo.";
+"webcam_avatar" = "If your computer is equipped with a webcam, you can <a href='javascript:'>take a snapshot</a>.";
+
+"update_avatar_notification" = "Profile photo was updated";
+"update_avatar_description" = "Click to watch";
+
+"deleting_avatar" = "Deleting photo";
+"deleting_avatar_sure" = "Do you sure you want to delete avatar?";
+
+"deleted_avatar_notification" = "Picture successfully deleted";
+
+"save_changes" = "Save changes";
+
+"upd_m" = "updated his profile picture";
+"upd_f" = "updated her profile picture";
+"upd_g" = "updated group's picture";
 
 /* Notes */
 
@@ -1283,7 +1306,7 @@
 
 "tour_title" = "Site Tour";
 "reg_title" = "Registration";
-"ifnotlike_title" = " &quot;If I don't liked this site?&quot; ";
+"ifnotlike_title" = " &quot;And what if I don't like this site?&quot; ";
 "tour_promo" = "About what awaits you after registration";
 
 "reg_text" = "<a href='/reg'>Registering</a> an account is absolutely free and takes no more than two minutes";
@@ -1389,14 +1412,14 @@
 
 
 "tour_section_10_title_1" = "Oops";
-"tour_section_10_text_1" = "I would be very happy to do a tutorial on this section, but the section is still under development. For now, we'll skip this section of the tutorial and move on...";
+"tour_section_10_text_1" = "I would be very happy to do a tutorial on this section, but it's still under development. For now, let's skip it and move on...";
 
 
 "tour_section_11_title_1" = "Themes";
-"tour_section_11_text_1" = "After registering, you will have a standard theme installed as your appearance";
-"tour_section_11_text_2" = "Some new users may be a bit intimidated by the current stock theme, which reeks of quite antiquity";
-"tour_section_11_text_3" = "<b>But no worries:</b> You can create your own theme for the site by reading <a href='https://docs.openvk.uk/'>documentation</a> or choose an existing one from the catalog";
-"tour_section_11_bottom_text_1" = "A catalog of themes is available under &quot;My Settings&quot; in the &quot;Interface&quot; tab;";
+"tour_section_11_text_1" = "After registering, you will have the default theme installed as your appearance";
+"tour_section_11_text_2" = "Some new users may be a bit intimidated by the current default theme, which reeks of quite antiquity";
+"tour_section_11_text_3" = "<b>But no worries:</b> You can create your own theme for the site by reading the <a href='https://docs.openvk.uk/'>documentation</a> or choose an existing one from the catalog";
+"tour_section_11_bottom_text_1" = "A catalog of themes is available under &quot;My Settings&quot;, in the &quot;Interface&quot; tab;";
 "tour_section_11_wordart" = "<img src='https://openvk.uk/assets/packages/static/openvk/img/tour/wordart_en.png' width='65%'>";
 
 "tour_section_12_title_1" = "Profile and group backgrounds";
