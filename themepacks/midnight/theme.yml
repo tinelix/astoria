@@ -1,5 +1,5 @@
 id: midnight
-version: "0.0.2.4"
+version: "0.0.2.5"
 openvk_version: 0
 enabled: 1
 metadata:
@@ -8,5 +8,5 @@ metadata:
         en: "Astorium Midnight"
         ru: "Astorium Midnight"
         uk: "Astorium Midnight"
-    author: "Ilya Prokopenko, Dmitry Tretyakov"
+    author: "Lumaeris, Dmitry Tretyakov"
     description: "A dark theme for Astorium"

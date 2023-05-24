@@ -1,3 +1,4 @@
+﻿
 function expand_wall_textarea(id) {
     var el = document.getElementById('post-buttons'+id);
     var wi = document.getElementById('wall-post-input'+id);
@@ -131,31 +132,7 @@ document.addEventListener("DOMContentLoaded", function() { //BEGIN
 
         return e.preventDefault();
     });
-    u("#_newAvatarPicture").on("click", function(e) {
-        MessageBox(tr('new_photo'),
-        "<form id='tmpPhDelF' action='" + u(this).attr("href") + "' method='POST' enctype='multipart/form-data'>"+
-        "<div id='tmpdd' style='text-align:center'>"+tr('good_photo')+
-	"<br><br>"+tr('formats')+"<br><br>"+
-	"<label class=\"button\" style=\"\">"+tr('browse')+
-        "<input type=\"file\" id=\"ava\" name=\"ava\" style=\"display: none;\" onchange=\"filename.innerHTML=ava.files[0].name\" /></label>"+
-        "<div id=\"filename\" style=\"margin-top: 10px;\"></div>"+
-	"<br><br>"+tr('upload_problems')+"<br></div>"+
-        //"<p><input type='checkbox' name='makeAvatarPost' value='1'>"+tr('leave_photo')+"</p>"+
-        "<input type='hidden' name='hash' value='" + u("meta[name=csrf]").attr("value") + "' />"+
-        "</form>", [
-            tr('upload_button'),
-            tr('close')
-        ], [
-            (function() {
-                u("#tmpPhDelF").nodes[0].submit();
-            }),
-            (function() {
-                u("#tmpPhDelF").remove();
-            }),
-        ]);
 
-        return e.preventDefault();
-    });
     /* @rem-pai why this func wasn't named as "#_deleteDialog"? It looks universal IMO */
 
     u("#_noteDelete").on("click", function(e) {
@@ -237,28 +214,72 @@ document.addEventListener("DOMContentLoaded", function() { //BEGIN
 
 }); //END ONREADY DECLS
 
-function repostPost(id, hash) {
-	uRepostMsgTxt  = tr('your_comment') + ": <textarea id='uRepostMsgInput_"+id+"'></textarea><br/><br/>";
+async function repostPost(id, hash) {
+    uRepostMsgTxt  = `
+    <b>${tr('auditory')}:</b> <br/>
+    <input type="radio" name="type" onchange="signs.setAttribute('hidden', 'hidden');document.getElementById('groupId').setAttribute('hidden', 'hidden')" value="wall" checked>${tr("in_wall")}<br/>
+    <input type="radio" name="type" onchange="signs.removeAttribute('hidden');document.getElementById('groupId').removeAttribute('hidden')" value="group" id="group">${tr("in_group")}<br/>
+    <select style="width:50%;" id="groupId" name="groupId" hidden>
+    </select><br/>
+    <b>${tr('your_comment')}:</b> 
+    <textarea id='uRepostMsgInput_${id}'></textarea>
+    <div id="signs" hidden>
+    <label><input onchange="signed.checked ? signed.checked = false : null" type="checkbox" id="asgroup" name="asGroup">${tr('post_as_group')}</label><br>
+    <label><input onchange="asgroup.checked = true" type="checkbox" id="signed" name="signed">${tr('add_signature')}</label>
+    </div>
+    <br/><br/>`;
+    let clubs = [];
+    repostsCount = document.getElementById("repostsCount"+id)
+    prevVal = repostsCount != null ? Number(repostsCount.innerHTML) : 0;
 
-	MessageBox(tr('share'), uRepostMsgTxt, [tr('send'), tr('cancel')], [
-		(function() {
-			text = document.querySelector("#uRepostMsgInput_"+id).value;
-			hash = encodeURIComponent(hash);
-			xhr = new XMLHttpRequest();
-			xhr.open("POST", "/wall"+id+"/repost?hash="+hash, true);
-			xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-			xhr.onload = (function() {
+    MessageBox(tr('share'), uRepostMsgTxt, [tr('send'), tr('cancel')], [
+        (function() {
+            text = document.querySelector("#uRepostMsgInput_"+id).value;
+            type = "user";
+            radios = document.querySelectorAll('input[name="type"]')
+            for(const r of radios)
+            {
+                if(r.checked)
+                {
+                    type = r.value;
+                    break;
+                }
+            }
+            groupId = document.querySelector("#groupId").value;
+            asGroup = asgroup.checked == true ? 1 : 0;
+            signed  = signed.checked == true ? 1 : 0;
+            hash = encodeURIComponent(hash);
+            
+            xhr = new XMLHttpRequest();
+            xhr.open("POST", "/wall"+id+"/repost?hash="+hash, true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onload = (function() {
                 if(xhr.responseText.indexOf("wall_owner") === -1)
-					MessageBox(tr('error'), tr('error_repost_fail'), [tr('ok')], [Function.noop]);
-				else {
-					let jsonR = JSON.parse(xhr.responseText);
+                    MessageBox(tr('error'), tr('error_repost_fail'), [tr('ok')], [Function.noop]);
+                else {
+                    let jsonR = JSON.parse(xhr.responseText);
                     NewNotification(tr('information_-1'), tr('shared_succ'), null, () => {window.location.href = "/wall" + jsonR.wall_owner});
-				}
-			});
-			xhr.send('text=' + encodeURI(text));
-		}),
-		Function.noop
-	]);
+                    repostsCount != null ?
+                    repostsCount.innerHTML = prevVal+1 :
+                    document.getElementById("reposts"+id).insertAdjacentHTML("beforeend", "(<b id='repostsCount"+id+"'>1</b>)") //для старого вида постов
+                }
+                });
+            xhr.send('text='+encodeURI(text) + '&type='+type + '&groupId='+groupId + "&asGroup="+asGroup + "&signed="+signed);
+        }),
+        Function.noop
+    ]);
+    
+    try
+    {
+        clubs = await API.Groups.getWriteableClubs();
+        for(const el of clubs) {
+            document.getElementById("groupId").insertAdjacentHTML("beforeend", `<option value="${el.id}">${escapeHtml(el.name)}</option>`)
+        }
+
+    } catch(rejection) {
+        console.error(rejection)
+        document.getElementById("group").setAttribute("disabled", "disabled")
+    }
 }
 
 function setClubAdminComment(clubId, adminId, hash) {
