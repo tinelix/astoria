@@ -1,9 +1,9 @@
 openvk:
     debug: true
     appearance:
-        name: "OpenVK"
-        motd: "Yet another OpenVK instance"
-    
+        name: "Astorium"
+        motd: "<a href=\"http://tinelix.ru\">Tinelix</a> - это больше, чем OpenVK!"
+
     preferences:
         femaleGenderPriority: true
         nginxCacheTime: null
@@ -11,8 +11,8 @@ openvk:
             disableLargeUploads: false
             mode: "basic"
             api:
-                maxFilesPerDomain: 10
-                maxFileSize: 25000000
+                maxFilesPerDomain: 480
+                maxFileSize: 16000000
         shortcodes:
             minLength: 3 # won't affect existing short urls or the ones set via admin panel
             forbiddenNames:
@@ -88,21 +88,23 @@ openvk:
         menu:
             links:
                 - name: "@left_menu_donate"
-                  url: "/donate"
+                  url: "https://t.me/tinelixdonators/4"
         about:
             links:
-                - name: "Link caption"
-                  url: "https://example.org/"
+                - name: "Веб-сайт"
+                  url: "https://tinelix.ru/"
+                - name: "Пожертвования"
+                  url: "https://t.me/tinelixdonators/4"
         adPoster:
             enable: false
-            src: "https://example.org/ad_poster.jpeg"
-            caption: "Ad caption"
-            link: "https://example.org/product.aspx?id=10&from=ovk"
+            src: "https://tinelix.ru/bannners/ad_banner.png"
+            caption: "Tinelix - это больше, чем OpenVK"
+            link: "https://tinelix.ru"
         bellsAndWhistles:
             fartscroll: false
             testLabel: false
         defaultMobileTheme: ""
-    
+
     telemetry:
         plausible:
             enable: false
@@ -117,7 +119,7 @@ openvk:
             enable: false
             container: ""
             site: ""
-    
+
     credentials:
         smsc:
             enable: false
