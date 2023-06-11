@@ -1,5 +1,5 @@
 body {
-    background: url("/themepack/modern/0.0.1.0/resource/1.png") repeat-x fixed;
+    background: url("/themepack/openvk_modern/0.0.1.0/resource/1.png") repeat-x fixed;
 }
 
 .page_header {
@@ -10,16 +10,16 @@ body {
 }
 
 .home_button {
-    background: #3C3C3C url("/themepack/modern/0.0.1.0/resource/2.png") no-repeat;
+    background: #3C3C3C url("/themepack/openvk_modern/0.0.1.0/resource/2.png") no-repeat;
     background-size: 80%;
-    background-position-y: 4px;
+    background-position-y: 0px;
     background-position-x: 2px;
 }
 
 .home_button_custom {
-    background: #3C3C3C url("/themepack/modern/0.0.1.0/resource/4.png") no-repeat;
+    background: #3C3C3C url("/themepack/openvk_modern/0.0.1.0/resource/4.png") no-repeat;
     background-size: 80%;
-    background-position-y: 4px;
+    background-position-y: 0px;
     background-position-x: 2px;
     text-shadow: none;
 }
