@@ -674,7 +674,7 @@ function resetSearch()
 
     for(const input of inputs)
     {
-        if(input != dnt) {
+        if(input != dnt && input != gend && input != gend1 && input != gend2) {
             input.value = ""
         }
     }
