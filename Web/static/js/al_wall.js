@@ -189,3 +189,77 @@ tippy(".client_app", {
     }
 });
 
+function addNote(textareaId, nid)
+{
+    if(nid > 0) {
+        note.value = nid
+        let noteObj = document.querySelector("#nd"+nid)
+    
+        let nortd = document.querySelector("#post-buttons"+textareaId+" .post-has-note");
+        nortd.style.display = "block"
+    
+        nortd.innerHTML = `${tr("note")} ${escapeHtml(noteObj.dataset.name)}`
+    } else {
+        note.value = "none"
+
+        let nortd = document.querySelector("#post-buttons"+textareaId+" .post-has-note");
+        nortd.style.display = "none"
+
+        nortd.innerHTML = ""
+    }
+
+    u("body").removeClass("dimmed");
+    u(".ovk-diag-cont").remove();
+}
+
+async function attachNote(id)
+{
+    let notes = await API.Wall.getMyNotes()
+    let body  = ``
+
+    if(notes.closed < 1) {
+        body = `${tr("notes_closed")}`
+    } else {
+        if(notes.items.length < 1) {
+            body = `${tr("no_notes")}`
+        } else {
+            body = `
+                ${tr("select_or_create_new")}
+                <div id="notesList">`
+
+            if(note.value != "none") {
+                body += `
+                <div class="ntSelect" onclick="addNote(${id}, 0)">
+                    <span>${tr("do_not_attach_note")}</span>
+                </div>`
+            }
+
+            for(const note of notes.items) {
+                body += `
+                    <div data-name="${note.name}" class="ntSelect" id="nd${note.id}" onclick="addNote(${id}, ${note.id})">
+                        <span>${escapeHtml(note.name)}</span>
+                    </div>
+                `
+            }
+         
+            body += `</div>`
+        }    
+    }
+
+    let frame = MessageBox(tr("select_note"), body, [tr("cancel")], [Function.noop]);
+
+    document.querySelector(".ovk-diag-body").style.padding = "10px"
+}
+
+async function showArticle(note_id) {
+    u("body").addClass("dimmed");
+    let note = await API.Notes.getNote(note_id);
+    u("#articleAuthorAva").attr("src", note.author.ava);
+    u("#articleAuthorName").text(note.author.name);
+    u("#articleAuthorName").attr("href", note.author.link);
+    u("#articleTime").text(note.created);
+    u("#articleLink").attr("href", note.link);
+    u("#articleText").html(`<h1 class="articleView_nameHeading">${note.title}</h1>` + note.html);
+    u("body").removeClass("dimmed");
+    u("body").addClass("article");
+}
