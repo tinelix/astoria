@@ -1,0 +1,20 @@
+.page_header {
+    position:relative;
+    width:791px;
+    height:43px;
+    background-repeat:no-repeat;
+    background-position:0;
+    background:url(/themepack/retro_ovk/0.0.1.0/resource/header.png)
+}
+
+.page_custom_header {
+    background:url(/themepack/retro_ovk/0.0.1.0/resource/header_c.png)
+}
+
+input[type="button"], input[class="button"] {
+    font-family: Tahoma,Verdana,Arial;
+}
+
+.button {
+    font-family: Tahoma,Verdana,Arial;
+}
