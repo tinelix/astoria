@@ -104,7 +104,7 @@ openvk:
             fartscroll: false
             testLabel: false
         defaultMobileTheme: ""
-
+        logs: true
     telemetry:
         plausible:
             enable: false

@@ -29,6 +29,10 @@ a {
     cursor: pointer;
 }
 
+.linkunderline:hover {
+    text-decoration: underline;
+}
+
 p {
     margin: 5px 0;
 }
@@ -672,6 +676,7 @@ input[type~="phone"],
 input[type="search"],
 input[type~="search"],
 input[type~="date"],
+input[type~="datetime-local"],
 select {
     border: 1px solid #C0CAD5;
     padding: 3px;
