@@ -296,6 +296,7 @@
                             {if !OPENVK_ROOT_CONF['openvk']['preferences']['security']['disablePasswordRestoring']}<a href="/restore">{_forgot_password}</a>{/if}
                         </form>
                     {/ifset}
+                    <div n:if="OPENVK_ROOT_CONF['openvk']['preferences']['bellsAndWhistles']['testLabel']" id="test-label">FOR TESTING PURPOSES ONLY</div>
                     </div>
                 </div>
                 {ifset $thisUser}

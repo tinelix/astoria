@@ -344,6 +344,7 @@
 
 "group_banned" = "Unfortunately, we had to block the <b>$1</b> group.";
 "add_photo" = "Add photo";
+"group_banned" = "Unfortunately, we had to block the <b>$1</b> group.";
 
 /* Albums */
 
