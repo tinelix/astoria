@@ -13,6 +13,8 @@ use openvk\Web\Models\Entities\Photo;
 use openvk\Web\Models\Repositories\Photos as PhotosRepo;
 use openvk\Web\Models\Entities\Video;
 use openvk\Web\Models\Repositories\Videos as VideosRepo;
+use openvk\Web\Models\Entities\Note;
+use openvk\Web\Models\Repositories\Notes as NotesRepo;
 
 final class Wall extends VKAPIRequestHandler
 {
@@ -54,6 +56,8 @@ final class Wall extends VKAPIRequestHandler
                     $attachments[] = $this->getApiPoll($attachment, $this->getUser());
                 } else if ($attachment instanceof \openvk\Web\Models\Entities\Video) {
                     $attachments[] = $attachment->getApiStructure();
+                } else if ($attachment instanceof \openvk\Web\Models\Entities\Note) {
+                    $attachments[] = $attachment->toVkApiStruct();
                 } else if ($attachment instanceof \openvk\Web\Models\Entities\Post) {
                     $repostAttachments = [];
 
@@ -121,6 +125,7 @@ final class Wall extends VKAPIRequestHandler
                 "can_archive"  => false, # TODO MAYBE
                 "is_archived"  => false,
                 "is_pinned"    => $post->isPinned(),
+                "is_explicit"  => $post->isExplicit(),
                 "attachments"  => $attachments,
                 "post_source"  => $post_source,
                 "comments"     => (object)[
@@ -215,7 +220,7 @@ final class Wall extends VKAPIRequestHandler
         foreach($psts as $pst) {
             $id   = explode("_", $pst);
             $post = (new PostsRepo)->getPostById(intval($id[0]), intval($id[1]));
-            if($post) {
+            if($post && !$post->isDeleted()) {
                 $from_id = get_class($post->getOwner()) == "openvk\Web\Models\Entities\Club" ? $post->getOwner()->getId() * (-1) : $post->getOwner()->getId();
                 $attachments = [];
                 $repost = []; // чел высрал семь сигарет 😳 помянем 🕯
@@ -226,6 +231,8 @@ final class Wall extends VKAPIRequestHandler
                         $attachments[] = $this->getApiPoll($attachment, $user);
                     } else if ($attachment instanceof \openvk\Web\Models\Entities\Video) {
                         $attachments[] = $attachment->getApiStructure();
+                    } else if ($attachment instanceof \openvk\Web\Models\Entities\Note) {
+                        $attachments[] = $attachment->toVkApiStruct();
                     } else if ($attachment instanceof \openvk\Web\Models\Entities\Post) {
                         $repostAttachments = [];
 
@@ -293,6 +300,7 @@ final class Wall extends VKAPIRequestHandler
                     "can_archive"  => false, # TODO MAYBE
                     "is_archived"  => false,
                     "is_pinned"    => $post->isPinned(),
+                    "is_explicit"  => $post->isExplicit(),
                     "post_source"  => $post_source,
                     "attachments"  => $attachments,
                     "comments"     => (object)[
@@ -440,6 +448,8 @@ final class Wall extends VKAPIRequestHandler
                     $attachmentType = "photo";
                 elseif(str_contains($attac, "video"))
                     $attachmentType = "video";
+                elseif(str_contains($attac, "note"))
+                    $attachmentType = "note";
                 else
                     $this->fail(205, "Unknown attachment type");
 
@@ -453,17 +463,25 @@ final class Wall extends VKAPIRequestHandler
                 if($attachmentType == "photo") {
                     $attacc = (new PhotosRepo)->getByOwnerAndVID($attachmentOwner, $attachmentId);
                     if(!$attacc || $attacc->isDeleted())
-                        $this->fail(100, "Photo does not exists");
-                    if($attacc->getOwner()->getId() != $this->getUser()->getId())
-                        $this->fail(43, "You do not have access to this photo");
+                        $this->fail(100, "Invalid photo");
+                    if(!$attacc->getOwner()->getPrivacyPermission('photos.read', $this->getUser()))
+                        $this->fail(43, "Access to photo denied");
                     
                     $post->attach($attacc);
                 } elseif($attachmentType == "video") {
                     $attacc = (new VideosRepo)->getByOwnerAndVID($attachmentOwner, $attachmentId);
                     if(!$attacc || $attacc->isDeleted())
                         $this->fail(100, "Video does not exists");
-                    if($attacc->getOwner()->getId() != $this->getUser()->getId())
-                        $this->fail(43, "You do not have access to this video");
+                    if(!$attacc->getOwner()->getPrivacyPermission('videos.read', $this->getUser()))
+                        $this->fail(43, "Access to video denied");
+
+                    $post->attach($attacc);
+                } elseif($attachmentType == "note") {
+                    $attacc = (new NotesRepo)->getNoteById($attachmentOwner, $attachmentId);
+                    if(!$attacc || $attacc->isDeleted())
+                        $this->fail(100, "Note does not exist");
+                    if(!$attacc->getOwner()->getPrivacyPermission('notes.read', $this->getUser()))
+                        $this->fail(11, "Access to note denied");
 
                     $post->attach($attacc);
                 }
@@ -542,6 +560,8 @@ final class Wall extends VKAPIRequestHandler
             foreach($comment->getChildren() as $attachment) {
                 if($attachment instanceof \openvk\Web\Models\Entities\Photo) {
                     $attachments[] = $this->getApiPhoto($attachment);
+                } elseif($attachment instanceof \openvk\Web\Models\Entities\Note) {
+                    $attachments[] = $attachment->toVkApiStruct();
                 }
             }
 
@@ -599,8 +619,8 @@ final class Wall extends VKAPIRequestHandler
     function getComment(int $owner_id, int $comment_id, bool $extended = false, string $fields = "sex,screen_name,photo_50,photo_100,online_info,online") {
         $this->requireUser();
 
-        $comment = (new CommentsRepo)->get($comment_id); // один хуй айди всех комментов общий
-
+        $comment = (new CommentsRepo)->get($comment_id); # один хуй айди всех комментов общий
+        
         $profiles = [];
 
         $attachments = [];
@@ -655,7 +675,7 @@ final class Wall extends VKAPIRequestHandler
         return $response;
     }
 
-    function createComment(int $owner_id, int $post_id, string $message, int $from_group = 0, string $attachments = "") {
+    function createComment(int $owner_id, int $post_id, string $message = "", int $from_group = 0, string $attachments = "") {
         $this->requireUser();
         $this->willExecuteWriteAction();
 
@@ -713,16 +733,16 @@ final class Wall extends VKAPIRequestHandler
                     $attacc = (new PhotosRepo)->getByOwnerAndVID($attachmentOwner, $attachmentId);
                     if(!$attacc || $attacc->isDeleted())
                         $this->fail(100, "Photo does not exists");
-                    if($attacc->getOwner()->getId() != $this->getUser()->getId())
-                        $this->fail(43, "You do not have access to this photo");
+                    if(!$attacc->getOwner()->getPrivacyPermission('photos.read', $this->getUser()))
+                        $this->fail(11, "Access to photo denied");
                     
                     $comment->attach($attacc);
                 } elseif($attachmentType == "video") {
                     $attacc = (new VideosRepo)->getByOwnerAndVID($attachmentOwner, $attachmentId);
                     if(!$attacc || $attacc->isDeleted())
                         $this->fail(100, "Video does not exists");
-                    if($attacc->getOwner()->getId() != $this->getUser()->getId())
-                        $this->fail(43, "You do not have access to this video");
+                    if(!$attacc->getOwner()->getPrivacyPermission('videos.read', $this->getUser()))
+                        $this->fail(11, "Access to video denied");
 
                     $comment->attach($attacc);
                 }

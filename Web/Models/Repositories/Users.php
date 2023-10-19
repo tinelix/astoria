@@ -44,9 +44,9 @@ class Users
         return $alias->getUser();
     }
     
-    function getByChandlerUser(ChandlerUser $user): ?User
+    function getByChandlerUser(?ChandlerUser $user): ?User
     {
-        return $this->toUser($this->users->where("user", $user->getId())->fetch());
+        return $user ? $this->toUser($this->users->where("user", $user->getId())->fetch()) : NULL;
     }
     
     function find(string $query, array $pars = [], string $sort = "id DESC"): Util\EntityStream
@@ -58,7 +58,7 @@ class Users
         $nnparamsCount = 0;
         
         foreach($pars as $paramName => $paramValue)
-            if($paramName != "before" && $paramName != "after" && $paramName != "gender" && $paramName != "maritalstatus" && $paramName != "politViews")
+            if($paramName != "before" && $paramName != "after" && $paramName != "gender" && $paramName != "maritalstatus" && $paramName != "politViews" && $paramName != "doNotSearchMe")
                 $paramValue != NULL ? $notNullParams += ["$paramName" => "%$paramValue%"] : NULL;
             else
                 $paramValue != NULL ? $notNullParams += ["$paramName" => "$paramValue"]   : NULL;
@@ -124,6 +124,9 @@ class Users
                         break;
                     case "gender":
                         $result->where("sex ?", $paramValue);
+                        break;
+                    case "doNotSearchMe":
+                        $result->where("id !=", $paramValue);
                         break;
                 }
             }

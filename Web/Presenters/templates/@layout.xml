@@ -38,14 +38,35 @@
     <body>
         <div id="sudo-banner" n:if="isset($thisUser) && $userTainted">
             <p>
-                Вы вошли как <b>{$thisUser->getCanonicalName()}</b>. Пожалуйста, уважайте
-                право на тайну переписки других людей и не злоупотребляйте подменой пользователя.
-                Нажмите <a href="/setSID/unset?hash={rawurlencode($csrfToken)}">здесь</a>, чтобы выйти.
+                {_you_entered_as} <b>{$thisUser->getCanonicalName()}</b>. {_please_rights}
+                {_click_on} <a href="/setSID/unset?hash={rawurlencode($csrfToken)}">{_there}</a>, {_to_leave}.
             </p>
         </div>
 
         <div class="notifications_global_wrap"></div>
         <div class="dimmer"></div>
+
+        <div class="articleView">
+            <a id="articleCloseButton" class="button" href="javascript:void(u('body').removeClass('article'));">{_close}</a>
+            <div class="articleView_container">
+                <div class="articleView_info">
+                    <div class="articleView_author">
+                        <img id="articleAuthorAva" src="" />
+                        <div>
+                            <span><a id="articleAuthorName"></a></span>
+                            <time id="articleTime"></time>
+                        </div>
+                    </div>
+
+                    <div class="articleView_link">
+                        <a id="articleLink" href="/" class="button">{_aw_legacy_ui}</a>
+                    </div>
+                </div>
+
+                <div class="articleView_text" id="articleText">
+                </div>
+            </div>
+        </div>
 
         {if isset($backdrops) && !is_null($backdrops)}
             <div id="backdrop" style="background-image: url('{$backdrops[0]|noescape}'), url('{$backdrops[1]|noescape}');">
@@ -91,8 +112,8 @@
 
                                 {if !$atSearch}
                                     <form action="/search" method="get" id="searcher" style="position:relative;">
-                                        <input id="searchInput" onfocus="expandSearch()" onblur="decreaseSearch()" class="sr" type="search" name="query" placeholder="{_header_search}" style="height: 20px;background: url('/assets/packages/static/openvk/img/search_icon.png') no-repeat 3px 4px; background-color: #fff; padding-left: 18px;width: 120px;" title="{_header_search} [Alt+Shift+F]" accesskey="f" />
-                                        <select name="type" class="whatFind" style="display:none;top: 0px;">
+                                        <input autocomplete="off" id="searchInput" oninput="checkSearchTips()" onfocus="expandSearch()" onblur="decreaseSearch()" class="sr" type="search" name="query" placeholder="{_header_search}" style="height: 20px;background: url('/assets/packages/static/openvk/img/search_icon.png') no-repeat 3px 4px; background-color: #fff; padding-left: 18px;width: 120px;" title="{_header_search} [Alt+Shift+F]" accesskey="f" />
+                                        <select onchange="checkSearchTips()" id="typer" name="type" class="whatFind" style="display:none;top: 0px;">
                                             <option value="users">{_s_by_people}</option>
                                             <option value="groups">{_s_by_groups}</option>
                                             <option value="posts">{_s_by_posts}</option>
@@ -101,6 +122,12 @@
                                             <option value="apps">{_s_by_apps}</option>
                                         </select>
                                     </form>
+                                    <div class="searchTips" id="srcht" hidden>
+                                        <table style="border:none;border-spacing: 0;">
+                                            <tbody id="srchrr">
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 {else}
                                     <form action="/search" method="get" id="searcher" style="margin-top: -1px;position:relative;">
                                         <input id="searchInput" value="{$_GET['query'] ?? ''}" type="search" class="sr" name="query" placeholder="{_header_search}" style="height: 20px; background-color: #fff; padding-left: 6px;width: 555px;" title="{_header_search} [Alt+Shift+F]" accesskey="f" />
@@ -146,7 +173,7 @@
                             <a href="{$thisUser->getURL()}" class="link" title="{_my_page} [Alt+Shift+.]" accesskey=".">{_my_page}</a>
                             <a href="/friends{$thisUser->getId()}" class="link">{_my_friends}
                                 <object type="internal/link" n:if="$thisUser->getFollowersCount() > 0">
-                                    <a href="/friends{$thisUser->getId()}?act=incoming">
+                                    <a href="/friends{$thisUser->getId()}?act=incoming" class="linkunderline">
                                        (<b>{$thisUser->getFollowersCount()}</b>)
                                     </a>
                                 </object>
@@ -166,7 +193,7 @@
                                     (<b>{$thisUser->getNotificationsCount()}</b>)
                                 {/if}
                             </a>
-                            <a href="/apps?act=installed" class="link">{_my_apps}</a>
+                            <a n:if="$thisUser->getLeftMenuItemStatus('apps')" href="/apps?act=installed" class="link">{_my_apps}</a>
                             <a href="/settings" class="link">{_my_settings}</a>
                             
                             {var $canAccessAdminPanel = $thisUser->getChandlerUser()->can("access")->model("admin")->whichBelongsTo(NULL)}
@@ -180,8 +207,23 @@
                                     (<b>{$helpdeskTicketNotAnsweredCount}</b>)
                                 {/if}
                             </a>
-
-                            <a n:if="$thisUser->getLeftMenuItemStatus('links')" n:foreach="OPENVK_ROOT_CONF['openvk']['preferences']['menu']['links'] as $menuItem" href="{$menuItem['url']}" target="_blank" class="link">{strpos($menuItem["name"], "@") === 0 ? tr(substr($menuItem["name"], 1)) : $menuItem["name"]}</a>
+                            <a n:if="$canAccessHelpdesk" href="/scumfeed" class="link">{tr("reports")}
+                                {if $reportNotAnsweredCount > 0}
+                                    (<b>{$reportNotAnsweredCount}</b>)
+                                {/if}
+                            </a>
+                            <a n:if="$canAccessHelpdesk" href="/noSpam" class="link">
+                                noSpam
+                            </a>
+                        <a
+                          n:if="$thisUser->getLeftMenuItemStatus('links')"
+                          n:foreach="OPENVK_ROOT_CONF['openvk']['preferences']['menu']['links'] as $menuItem"
+                          href="{$menuItem['url']}"
+                          target="_blank"
+                          class="link">
+                            {strpos($menuItem["name"], "@") === 0 ? tr(substr($menuItem["name"], 1)) : $menuItem["name"]}
+                        </a>
+                        <div id="_groupListPinnedGroups">
 
                             <div id="_groupListPinnedGroups">
                                 <div n:if="$thisUser->getPinnedClubCount() > 0" class="menu_divider"></div>
@@ -255,8 +297,13 @@
                         </form>
                     {/ifset}
                     <div n:if="OPENVK_ROOT_CONF['openvk']['preferences']['bellsAndWhistles']['testLabel']" id="test-label">FOR TESTING PURPOSES ONLY</div>
+                    </div>
                 </div>
-            </div>
+                {ifset $thisUser}
+                    {if !$thisUser->isBanned() && !$thisUser->isDeleted()}
+                        </div>
+                    {/if}
+                {/ifset}
 
             <div class="page_body">
                 <div id="wrapH">

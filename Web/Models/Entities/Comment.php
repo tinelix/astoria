@@ -11,7 +11,7 @@ class Comment extends Post
     
     function getPrettyId(): string
     {
-        return $this->getRecord()->id;
+        return (string)$this->getRecord()->id;
     }
     
     function getVirtualId(): int
@@ -61,7 +61,7 @@ class Comment extends Post
         $res->id            = $this->getId();
         $res->from_id       = $this->getOwner()->getId();
         $res->date          = $this->getPublicationTime()->timestamp();
-        $res->text          = $this->getText();
+        $res->text          = $this->getText(false);
         $res->attachments   = [];
         $res->parents_stack = [];
         
@@ -84,5 +84,18 @@ class Comment extends Post
             $res->can_like   = 1;
         }
         return $res;
+    }
+
+    function getURL(): string
+    {
+        return "/wall" . $this->getTarget()->getPrettyId() . "#_comment" . $this->getId();
+    }
+
+    function canBeEditedBy(?User $user = NULL): bool
+    {
+        if(!$user)
+            return false;
+        
+        return $user->getId() == $this->getOwner(false)->getId();
     }
 }
