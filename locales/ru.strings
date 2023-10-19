@@ -1216,6 +1216,7 @@
 /* Admin panel */
 
 "admin" = "Админ-панель";
+"sandbox_for_developers" = "Sandbox для разработчиков";
 "db" = "База данных";
 "sandbox_for_developers" = "Sandbox для разработчиков";
 "admin_ownerid" = "ID владельца";
