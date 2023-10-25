@@ -6,9 +6,12 @@
 {/block}
 
 {block content}
-    {_you_can_invite}<br><br>
-    <center>
-        <input type="text" readonly value="https://{$_SERVER["HTTP_HOST"]}/reg?ref={rawurlencode($thisUser->getRefLinkId())}" size="50" />
-    </center>
-    <p>{_you_can_invite_2}</p>
+    {var $canAccessAdminPanel = $thisUser->getChandlerUser()->can("access")->model("admin")->whichBelongsTo(NULL)}
+    <div n:if="$canAccessAdminPanel">
+        {_you_can_invite}<br><br>
+        <center>
+            <input type="text" readonly value="https://{$_SERVER["HTTP_HOST"]}/reg?ref={rawurlencode($thisUser->getRefLinkId())}" size="50" />
+        </center>
+        <p>{_you_can_invite_2}</p>
+    </div>
 {/block}
