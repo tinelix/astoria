@@ -222,6 +222,9 @@
 
 "edited_short" = "edited";
 
+"updated_photo_m" = "updated his avatar";
+"updated_photo_f" = "updated her avatar";
+
 /* Friends */
 
 "friends" = "Friends";
@@ -340,6 +343,8 @@
 "search_group_desc" = "Here you can browse through the existing groups and choose a group to suit your needs...";
 
 "group_banned" = "Unfortunately, we had to block the <b>$1</b> group.";
+"add_photo" = "Add photo";
+"group_banned" = "Unfortunately, we had to block the <b>$1</b> group.";
 
 /* Albums */
 
@@ -371,6 +376,16 @@
 "albums_list_one" = "You have one album";
 "albums_list_other" = "You have $1 albums";
 
+"new_photo" = "Upload new photo";
+
+"formats" = "You can upload an image in JPG, GIF or PNG format.";
+"upload_problems" = "If you're having troubles during uploading, try selecting a smaller photo.";
+"webcam_avatar" = "If your computer has a webcam, you can take a photo from the webcam »";
+
+"delete_photo" = "Are you sure you want to delete the photo?";
+"change_miniature" = "Change miniature";
+"good_photo" = "A good photo will make your community more recognizable.";
+"leave_photo" = "Leave post on the wall";
 "add_image" = "Add image";
 "add_image_group" = "Upload image";
 "upload_new_picture" = "Upload new photo";
@@ -1304,6 +1319,7 @@
 /* Admin panel */
 
 "admin" = "Admin panel";
+"db" = "Database";
 
 "sandbox_for_developers" = "Sandbox for developers";
 "admin_ownerid" = "Owner ID";
@@ -1435,7 +1451,7 @@
 
 /* About */
 
-"about_openvk" = "About OpenVK";
+"about_astorium" = "About Astorium";
 
 "about_this_instance" = "About this instance";
 "rules" = "Rules";
@@ -1475,6 +1491,8 @@
 "question_confirm" = "This action can't be undone. Do you really wanna do it?";
 "confirm_m" = "Confirm";
 "action_successfully" = "Success";
+
+"prevention" = "Prevention";
 
 /* User alerts */
 
@@ -1692,7 +1710,7 @@
 "tour_section_13_bottom_text_3" = "<b>Attention: </b>Once a promocode is activated on your page, the same promocode cannot be reactivated";
 
 "tour_section_14_title_1" = "Mobile version";
-"tour_section_14_text_1" = "At the moment there is no mobile web version of the site yet, but there is a mobile app for Android";
+"tour_section_14_text_1" = "There is currently a mobile version of the site that uses the OpenVK Mobile theme as well as the OpenVK Legacy Android app.";
 "tour_section_14_text_2" = "OpenVK Legacy is an OpenVK mobile app for retro Android devices with the design of the original VKontakte 3.0 app from 2013";
 "tour_section_14_text_3" = "The minimum supported version is Android 2.1 Eclair, which means devices from the early 2010s will be quite useful";
 

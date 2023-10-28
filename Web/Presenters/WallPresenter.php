@@ -329,7 +329,7 @@ final class WallPresenter extends OpenVKPresenter
             $this->flashFail("err", tr("failed_to_publish_post"), tr("post_is_too_big"));
         }
         
-        foreach($photos as $photo)
+        foreach((array)$photos as $photo)
         	$post->attach($photo);
         
         if(sizeof($videos) > 0)

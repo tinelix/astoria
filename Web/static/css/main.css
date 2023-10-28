@@ -25,7 +25,7 @@ nobold {
 
 a {
     text-decoration: none;
-    color: #2B587A;
+    color: #c04b0f;
     cursor: pointer;
 }
 
@@ -110,7 +110,7 @@ h1 {
 }
 
 .header_navigation .link a {
-    color: #D7D7D7;
+    color: #ffd9b2;
     text-decoration: none;
     font-weight: bold;
 }
@@ -401,7 +401,7 @@ h1 {
     border: none;
     border-bottom: 1px solid #CCC;
     font-size: 11px;
-    color: #2b587a;
+    color: #c04b0f;
     width: 200px;
     text-align: left;
     cursor: pointer;
@@ -525,17 +525,18 @@ table {
     font-size: 11px;
     outline: none;
     white-space: nowrap;
-    background: #595959;
+    background: #c04b0f;
     background-position: 0 -16px;
     color: #fff;
     padding: 4px 8px;
-    text-shadow: 0 1px 0 #686868;
+    text-shadow: 0 1px 0 #0000003f;
     cursor: pointer;
     text-decoration: none;
 }
 
 .button:hover {
-    color: #e8e8e8;
+    text-shadow: 0 1px 0 #0000001f;
+    color: #ffffffd5;
 }
 
 .button[disabled] {
@@ -689,7 +690,7 @@ select {
 
 .header2 {
     border-bottom: 1px solid #E8EBEE;
-    color: #45688E;
+    color: #c04b0f;
     font-size: 14px;
     font-weight: bold;
     margin: 0;
@@ -698,7 +699,7 @@ select {
 
 h4 {
     border-bottom: 1px solid #E8EBEE;
-    color: #45688E;
+    color: #c04b0f;
     font-size: 12px;
     font-weight: bold;
     margin: 0;
@@ -877,8 +878,6 @@ span {
 
 .content_list .cl_element {
     width: 33%;
-    display: inline-block;
-    text-align: center;
 }
 
 .content_list.long .cl_element {
@@ -899,7 +898,6 @@ span {
 
 .content_list .cl_element .cl_name .cl_lname {
     font-size: 7pt;
-    display: block;
 }
 
 .ava {
@@ -926,7 +924,7 @@ table.User {
 }
 
 .tabs {
-    border-bottom: 1px solid #707070;
+    border-bottom: 1px solid #c04b0f;
     padding: 0 10px;
     margin-left: -10px;
     width: 607px;
@@ -940,12 +938,12 @@ table.User {
 }
 
 #activetabs {
-    background: #707070;
+    background: #c04b0f;
 }
 
 
 #activetabs:hover {
-    color: #e8e8e8;
+    color: #fec07c;
 }
 
 .tab {
@@ -1462,11 +1460,10 @@ body.scrolled .toTop:hover {
 }
 
 #test-label {
-    padding: 8pt;
-    margin: 4pt;
+    padding: 4pt;
+    margin-top: 8pt;
     border: 1px solid #9a205e;
     background-color: #f5e9ec;
-    position: fixed;
     font-weight: bold;
 }
 
@@ -1526,7 +1523,7 @@ body.scrolled .toTop:hover {
 }
 
 .like_wrap {
-    color: #2F5879;
+    color: #d65515;
     font-size: 10px;
     cursor: pointer;
     float: right;
@@ -1598,14 +1595,14 @@ body.scrolled .toTop:hover {
 }
 
 .profileName {
-    color: #45688E;
+    color: #dd6700;
     font-size: 11px;
     font-weight: bold;
     margin: 0;
 }
 
 .profileName h2 {
-    color: #45688E;
+    color: #dd6700;
     font-size: 13px;
     margin: 0;
     padding: 0;
@@ -1874,12 +1871,12 @@ body.scrolled .toTop:hover {
 }
 
 .paginator a:hover {
-    border-top: 3px solid rgb(170, 170, 170);
+    border-top: 3px rgb(254, 189, 140);
     background-color: rgb(230, 230, 230);
 }
 
 .paginator a.active {
-    border-top: 3px solid rgb(130, 130, 130);
+    border-top: 3px solid rgb(192, 75, 15);
     font-weight: bold;
 }
 
@@ -1999,7 +1996,7 @@ body.scrolled .toTop:hover {
 }
 
 .summaryBar {
-    border-bottom: #DEDEDE solid 1px;
+    border-bottom: #707070 solid 1px;
     clear: both;
     padding: 11px 10px;
     padding-bottom: 11px;
@@ -2007,7 +2004,7 @@ body.scrolled .toTop:hover {
 }
 
 .summaryBar .summary {
-    color: #45688E;
+    color: #c04b0f;
     font-weight: bold;
     padding-top: 3px;
     padding-bottom: 4px;

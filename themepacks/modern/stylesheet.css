@@ -28,6 +28,10 @@ body {
     background: unset;
 }
 
+.header_navigation .link a {
+    color: #E2E2E2;
+}
+
 .header_navigation .link a:hover {
     text-decoration: none;
 }
@@ -47,13 +51,13 @@ body {
 
 .content_title_expanded {
     cursor: pointer;
-    background-image: unset;
+    background-image: none;
     padding: 3px 10px;
     border-top: #e6e6e6 solid 1px;
 }
 
 .content_title_unexpanded {
-    background-image: unset;
+    background-image: none;
     padding: 3px 10px;
     border-top: #eee solid 1px;
 }
@@ -166,7 +170,7 @@ input[type~="search"], textarea, select {
 }
 
 input[type=checkbox] {
-	background-image: url("/themepack/openvk_modern/0.0.1.0/resource/6.png")
+	background-image: url("/themepack/modern/0.0.1.0-astorium/resource/6.png")
 }
 
 .mb_tab#active div {
