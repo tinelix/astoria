@@ -41,7 +41,7 @@ _**Astorium** - форк, основанный на [OSS-проекте OpenVK](
 
    _Для граждан РФ крайне важен [переход Composer на аполитический репозиторий](https://stackoverflow.com/a/76131122)._
 
-* PHP 8 is still being tested; performance on this version of PHP is not yet guaranteed.
+* PHP 8 пока ещё тестируется, работоспособность движка на этой версии PHP пока не гарантируется.
 
 2. Установите MySQL-совместимую базу данных.
 
