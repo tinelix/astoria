@@ -52,7 +52,7 @@ _**Tinelix Astorium** - форк, основанный на [OSS-проекте 
 3. Установите [commitcaptcha](https://github.com/openvk/commitcaptcha) и OpenVK в качестве расширений Chandler:
 
 ```bash
-git clone https://github.com/openvk/openvk /path/to/chandler/extensions/available/openvk
+git clone https://github.com/tinelix/astorium /path/to/chandler/extensions/available/openvk
 git clone https://github.com/openvk/commitcaptcha /path/to/chandler/extensions/available/commitcaptcha
 ```
 
