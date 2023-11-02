@@ -1,8 +1,8 @@
-# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Astorium
+# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Tinelix Astorium
 
 _[English](README.md)_
 
-_**Astorium** - форк, основанный на [OSS-проекте OpenVK](https://github.com/openvk/openvk) и разработан для своих нужд и потребностей._
+_**Tinelix Astorium** - форк, основанный на [OSS-проекте OpenVK](https://github.com/openvk/openvk) и разработан для своих нужд и потребностей._
 
 **OpenVK** — это попытка создать простую CMS, которая ~~косплеит~~ имитирует старый ВКонтакте. На данный момент, представленный здесь исходный код проекта пока не является стабильным.
 
