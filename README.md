@@ -1,8 +1,8 @@
-# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Astorium
+# <img align="right" src="https://github.com/openvk/openvk/raw/master/Web/static/img/logo_shadow.png" alt="openvk" title="openvk" width="15%">Tinelix Astorium
 
 _[Русский](README_RU.md)_
 
-_**Astorium** - fork based on [OpenVK OSS project](https://github.com/openvk/openvk) and designed for your needs and requirements._
+_**Tinelix Astorium** - fork based on [OpenVK OSS project](https://github.com/openvk/openvk) and designed for your needs and requirements._
 
 **OpenVK** is an attempt to create a simple CMS that ~~cosplays~~ imitates old VKontakte. Code provided here is not stable yet.
 
