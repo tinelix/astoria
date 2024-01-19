@@ -40,6 +40,7 @@ If you want, you can add your instance to the list above so that people can regi
 1. Install PHP 7.4, web-server, Composer, Node.js 10+, Yarn and [Chandler](https://github.com/openvk/chandler)
 
 * PHP 8 is still being tested; the functionality of the engine on this version of PHP is not yet guaranteed.
+* _For Russian Federation residents [switching Composer to non-political repository](https://stackoverflow.com/a/76131122) is very important._
 
 2. Install MySQL-compatible database.
 
